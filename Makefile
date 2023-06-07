@@ -1,5 +1,6 @@
 
-SRCS = so_long.c map.c map2.c sprites.c sub.c display.c key_manager.c player.c enemies.c scene_manager.c tears.c lanims.c door.c life.c pickups.c
+SRCS = srcs/so_long.c srcs/map.c srcs/map2.c srcs/sprites.c srcs/sub.c srcs/display.c srcs/key_manager.c srcs/player.c srcs/enemies.c srcs/scene_manager.c\
+		srcs/tears.c srcs/lanims.c srcs/door.c srcs/life.c srcs/pickups.c srcs/scene.c srcs/display_ui.c srcs/init.c srcs/get_sprites.c srcs/lib.c
 
 OBJS = ${SRCS:.c=.o}
 
@@ -10,7 +11,9 @@ NAME = so_long
 
 
 ${NAME}: ${OBJS}
-	gcc ${OBJS} -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o ${NAME}
+	gcc ${OBJS} -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit -o ${NAME}
+
+
 
 all:	${NAME}
 
